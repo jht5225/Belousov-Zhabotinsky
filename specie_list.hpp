@@ -20,7 +20,6 @@ Declare species in `specie_list.hpp`. List the specie names between the
 SPECIE(FE2)
 SPECIE(FE3)
 SPECIE(BR)
-SPECIE(HBRO)
 
 #ifdef UNDO_CRITICAL_SPECIE_DEF
 #undef CRITICAL_SPECIE

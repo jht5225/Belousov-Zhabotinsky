@@ -16,8 +16,9 @@ Declare reactions in `reactions_list.hpp`. List the reaction names between the t
 REACTION(br_synthesis)
 REACTION(fe2_reaction)
 REACTION(fe3_reaction)
-REACTION(br_to_hbro)
-REACTION(br_decay)
+REACTION(fe2_synthesis)
+	
+
 #ifdef UNDO_DELAY_REACTION_DEF
 #undef DELAY_REACTION 
 #undef UNDO_DELAY_REACTION_DEF

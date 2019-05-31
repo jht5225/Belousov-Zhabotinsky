@@ -64,35 +64,34 @@ template<>
 template<class Ctxt>
 RATETYPE reaction<br_synthesis>::active_rate(const Ctxt& c) {
    
-		 return c.getRate(br_synthesis);
+		 return c.getRate(br_synthesis)*(c.calculateNeighborAvg(FE3,1)+1);
 	
 }
-
+/*
 template<>
 template<class Ctxt>
 RATETYPE reaction<br_decay>::active_rate(const Ctxt& c) {
-   
 		 return c.getRate(br_decay);
-
 }
+*/
 
 template<>
 template<class Ctxt>
-RATETYPE reaction<br_to_hbro>::active_rate(const Ctxt& c) {
-    return c.getRate(br_to_hbro)+c.getCon(BR);
+RATETYPE reaction<fe2_synthesis>::active_rate(const Ctxt& c) {
+    return c.getRate(fe2_synthesis);
 }
 
 template<>
 template<class Ctxt>
 RATETYPE reaction<fe2_reaction>::active_rate(const Ctxt& c) {
-    return (c.getRate(fe2_reaction)+(1/(c.calculateNeighborAvg(BR, 1)+1)))*(c.getCon(FE2)+1);
+    return ((c.getRate(fe2_reaction))+c.calculateNeighborAvg(BR,2))*(c.getCon(FE2)+1);
 }
 
 template<>
 template<class Ctxt>
 RATETYPE reaction<fe3_reaction>::active_rate(const Ctxt& c) {
 		
-   return (c.getRate(fe3_reaction)+(c.calculateNeighborAvg(BR,1)))*(c.getCon(FE3)+1);
+   return ((c.getRate(fe3_reaction))/(c.getCon(FE2)+1))*(c.getCon(FE3)+1);
 		
 }
 
