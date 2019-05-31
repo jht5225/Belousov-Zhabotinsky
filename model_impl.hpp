@@ -67,13 +67,7 @@ RATETYPE reaction<br_synthesis>::active_rate(const Ctxt& c) {
 		 return c.getRate(br_synthesis)*(c.calculateNeighborAvg(FE3,1)+1);
 	
 }
-/*
-template<>
-template<class Ctxt>
-RATETYPE reaction<br_decay>::active_rate(const Ctxt& c) {
-		 return c.getRate(br_decay);
-}
-*/
+
 
 template<>
 template<class Ctxt>
